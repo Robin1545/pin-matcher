@@ -11,11 +11,18 @@ values = [];
 function generateRandomNumber () {
     leftTry.innerHTML = 3;
     submitBtn.disabled = false;
-    formControl1.value = Math.floor(Math.random() * (9999 - 1000 + 1) ) + 1000;
+    document.getElementById('disabledTry').style.display = 'none';
+    formControl1.value = '';
+    setTimeout(() => {
+        formControl1.value = Math.floor(Math.random() * (9999 - 1000 + 1) ) + 1000;
+        setTimeout(() => {
+            document.getElementById('disabledTry').style.display = 'block';
+        },200)
+    }, 400);
     formControl2.value = '';
     formControl2.style.color = 'white';
     values = [];
-    document.getElementById('disabledTry').style.display = 'block';
+    
 }
 
 
